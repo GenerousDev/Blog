@@ -1,0 +1,23 @@
+<head>
+  <title>{{ categories }} category</title>
+</head>
+
+<h1>{{ categories }} category</h1>
+<hr>
+
+{% for post in category_posts %}
+<ul>
+  <li>
+      <a href="{% url 'article-view' post.pk %}">
+          {{ post.title }}</a> - 
+      {{ post.description }}
+      <!-- {{ post.author.last_name }} - {{ post.post_date }}<br/> -->
+      <!-- <small>{{ post.body | slice:":359" | safe }}</small> -->
+
+      <!-- {% if user.is_authenticated %}
+      <small><a href="{% url 'update_post' post.pk %}"> (Edit) </a></small> <small><a
+          href="{% url 'delete_post' post.pk %}">(Delete)</a></small> <br/>
+      {% endif %} -->
+  </li>
+</ul>
+{% endfor %}

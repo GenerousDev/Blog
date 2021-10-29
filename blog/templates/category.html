@@ -1,0 +1,14 @@
+<h1>All the categories</h1>
+{% if categoriesvalue %}
+    <ul>
+      {% for blog in categoriesvalue %}
+        <li>
+     <a href="{{ blog.get_absolute_url }}"><h2>{{ blog.title }}</h2></a>  
+          <br/>
+          <p>{{blog.description|truncatewords:40}}</p>  
+        </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+      <p>The blog list is empty.</p>
+    {% endif %}

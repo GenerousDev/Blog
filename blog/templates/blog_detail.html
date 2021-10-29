@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+  <html>
+    <head>
+        <title>Blog</title>
+        <link rel="stylesheet" type="text/css" href="{% static '/css/styles.css' %}">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@1.16.0/dist/full.css" rel="stylesheet" type="text/css" />
+       <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+      </head>
+      <body>
+<div class="bg-gray-50" style="margin-left: auto; margin-right: auto; max-width: 42rem; padding: 2.625rem 1.3125rem;">
+    
+        <h1 style="line-height: 2.625rem; margin-bottom: 0px; margin-top: 0px;">
+            <a aria-current="page" class="text-2xl text-gray-700" href="/" style="box-shadow: none; 
+            text-decoration: none;">GenerousDev Blog
+            </a></h1>
+  
+  <br/>
+  {% if blog_detail %}
+    <h1 class="text-3xl" >{{ blog_detail.title }}</h1>
+    <br/>
+    <!-- .date is used to convert datetime to just date -->
+    <h1>{{ blog_detail.created_at.date }}</h1>
+    <br/>
+    <div class="">{{blog_detail.description|safe}}</div>  
+    {% endif %}
+</div>
+</body>
+
+</html>
