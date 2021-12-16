@@ -46,6 +46,10 @@ INSTALLED_APPS = [
      'django_summernote',
 ]
 
+# Password 
+# ABU
+# Normalpassword
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
